@@ -39,33 +39,28 @@ export const Landing = () => {
   if (!joined) {
     return (
       <div className="landing-container">
-        <h1 className="landing-title">Welcome to the video chat app</h1>
+        <h1 className="landing-title">Welcome to the Video Chat App</h1>
+
         <div className="video-container">
           <div className="video-wrapper">
-            <video autoPlay ref={videoRef}></video>
+            <video autoPlay ref={videoRef} />
           </div>
         </div>
+
         <div className="info-container">
           <p>Make sure to allow camera and microphone access</p>
           <p>Enter your name to join the room</p>
-          <p>Click on Join to enter the room</p>
         </div>
+
         <div className="input-container">
           <label htmlFor="name">Name</label>
           <input
             type="text"
-            onChange={(e) => {
-              setName(e.target.value);
-            }}
-          ></input>
-
-          <button
-            onClick={() => {
-              setJoined(true);
-            }}
-          >
-            Join
-          </button>
+            id="name"
+            value={name}
+            onChange={(e) => setName(e.target.value)}
+          />
+          <button onClick={() => setJoined(true)}>Join</button>
         </div>
       </div>
     );
